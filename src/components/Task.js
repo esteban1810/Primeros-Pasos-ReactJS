@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import PropType from 'prop-types';
 import './task.css';
 
 const button = {
@@ -18,7 +19,7 @@ class Task extends Component {
     boton(){
         if(this.props.task.done){
             return {
-                display:'none'
+                color:'red'
             }
         }
     }
@@ -33,6 +34,10 @@ class Task extends Component {
                     <button style={button}>X</button>
                 </div>
     }
+}
+
+Task.propTypes = {
+    task: PropType.object.isRequired
 }
 
 export default Task;
