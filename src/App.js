@@ -1,58 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
+import tasks from './sample/tasks.json';
+import Tasks from './components/Tasks.js'
 import './App.css';
 
-// function HelloWorld({text,title}){
-//   return(
-//     <div id="hello">
-//       <h3>{title}</h3>
-//       <p>{text}</p>
-//     </div>
-//   );
-// }
+class App extends Component {
 
-class HelloWorld extends React.Component {
   state = {
-    visible: true
+    task:tasks
   }
 
-  // ocultar(){
-  //   this.setState({visible:false});
-  // }
-
-  cambiarEstado = ()=>{
-    this.setState({visible:!this.state.visible})
+  render(){
+    return <div>
+      <Tasks tasks={tasks}/>
+    </div> 
   }
-
-  render() {
-    if(this.state.visible){
-      return (
-        <div id="hello">
-          <h3>{this.props.title}</h3>
-          <p>{this.props.text}</p>
-          <button onClick={this.cambiarEstado}>OCULTAR</button>
-          {/* <button onClick={this.ocultar.bind(this)}>OCULTAR</button> */}
-          {/* <button onClick={()=>this.setState({visible:false})}>OCULTAR</button> */}
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <h3>No existe</h3>
-          <button onClick={this.cambiarEstado}>MOSTRAR</button>
-        </div>
-      )
-    }
-  }
-}
-
-function App() {
-  return (
-    <div>THIS A COMPONENT: 
-      <HelloWorld text="Hola mundo" title="saludo"/> 
-      <HelloWorld text="Adios, basura" title="despedida"/> 
-
-    </div>
-  );
+  
 }
 
 export default App;
