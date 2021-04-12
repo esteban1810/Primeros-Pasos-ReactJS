@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import tasks from './sample/tasks.json';
-import Tasks from './components/Tasks.js'
+// import Tasks from './components/Tasks.js'
+import TaskForm from './components/TaskForm.js';
 import './App.css';
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
 
   render(){
     return <div>
-      <Tasks tasks={tasks}/>
+      <TaskForm/>
+      {/* <Tasks tasks={tasks}/> */}
     </div> 
   }
   
