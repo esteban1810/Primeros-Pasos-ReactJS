@@ -7,6 +7,7 @@ const button = {
     borderStyle:'none',
     borderRadius: '5px',
     fontSize:'18px'
+    
 }
 
 class Task extends Component {
@@ -27,10 +28,10 @@ class Task extends Component {
     render(){
         const {id,title,description,done} = this.props.task;
         return <div style={this.boton()}  key={id}>
-                    <h1>{title}</h1>
-                    <p style={this.parrafos()}>{id}</p>
-                    <p>{description}</p>
-                    <p>{done}</p>
+                    <p>{title} - 
+                    {id} - 
+                    {description} - 
+                    {done}</p>
                     <button style={button}>X</button>
                 </div>
     }
